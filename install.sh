@@ -82,5 +82,12 @@ wget https://download.uib.de/opsi4.2/boot-cd/opsi4.2.0-client-boot-cd_20230913.i
 
 sudo opsi-package-updater -v install opsi-winpe
 
-wget https://download.uib.de/4.2/experimental/opsiconfd-addons/opsi-webgui_4.2.23.zip
 # Add add-on in Addons pannel in website
+wget https://download.uib.de/4.2/experimental/opsiconfd-addons/opsi-webgui_4.2.23.zip
+
+# Install a DHCP if none are present in the network
+apt install isc-dhcp-server
+opsi-setup --auto-configure-dhcpd
+opsi-setup --patch-sudoers-file
+
+# Add a DNS zone if none are present in the network
