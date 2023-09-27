@@ -11,6 +11,7 @@ Use opsi-setup-detector to create opsiscript and opsi PackageBuilder to build pa
 - `LibreOffice`, use https://fr.libreoffice.org/download/telecharger-libreoffice/, rename it `LibreOffice_7.6.1_Win_x86-64` and move it into `libreoffice/CLIENT_DATA/files1`
 - `Visual Studio Code`, use https://code.visualstudio.com/Download (System Installer x64), renamte it `VSCodeSetup-x64-1.82.2` and move it into `code/CLIENT_DATA/files1`
 - `Wireshark`, use https://www.wireshark.org/ (Installer), rename it `Wireshark-win64-4.0.8` and move it into `wireshark/CLIENT_DATA/file1`
+- `VMware Player`, use https://www.vmware.com/fr/products/workstation-player/workstation-player-evaluation.html, rename it `VMware-player-full-17.0.2-21581411` and move it into `vmware/CLIENT_DATA/files1`
 
 ### Install Packages
 

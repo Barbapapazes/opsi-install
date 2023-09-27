@@ -1,0 +1,21 @@
+[Package]
+version: 1
+depends: 
+
+[Product]
+type: localboot
+id: vmware-player
+name: VMware Player
+description: 
+advice: 
+version: 17.0.2
+priority: 0
+licenseRequired: 
+productClasses: 
+setupScript: setup.opsiscript
+uninstallScript: uninstall.opsiscript
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
