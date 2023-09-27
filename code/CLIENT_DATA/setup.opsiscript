@@ -72,7 +72,7 @@ endif
 
 
 [Winbatch_install]
-"$installerSourceDir$\VSCodeSetup-x64-1.82.2.exe" /sp- /silent /norestart /nocancel /SUPPRESSMSGBOXES /MERGETASKS="!runcode,addcontextmenufiles,addcontextmenufolders"
+"$installerSourceDir$\VSCodeSetup-x64-1.82.2.exe" /sp- /silent /norestart /nocancel /SUPPRESSMSGBOXES /MERGETASKS="!runcode,addcontextmenufiles,addcontextmenufolders,addtopath,quicklaunchicon,desktopicon"
 
 [Winbatch_uninstall_1]
 "$Installdir$\unins000.exe" /silent /norestart /nocancel /SUPPRESSMSGBOXES
