@@ -8,3 +8,4 @@ Use opsi-setup-detector to create opsiscript and opsi PackageBuilder to build pa
 
 - `firefox`, use https://www.mozilla.org/en-US/firefox/enterprise, rename it `firefox_esr.exe` and move it into `firefox/CLIENT_DATA`
 - `putty`, use https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html (x64), rename it `putty-64bit-0.79-installer` and move it into `putty/CLIENT_DATA/files1`
+- `libreoffice`, use https://fr.libreoffice.org/download/telecharger-libreoffice/, rename it `LibreOffice_7.6.1_Win_x86-64` and move it into `libreoffice/CLIENT_DATA/files1`

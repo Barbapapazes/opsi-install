@@ -1,0 +1,21 @@
+[Package]
+version: 1
+depends: 
+
+[Product]
+type: localboot
+id: libreoffice
+name: LibreOffice
+description: 
+advice: 
+version: 7.6.1.2
+priority: 0
+licenseRequired: 
+productClasses: 
+setupScript: setup.opsiscript
+uninstallScript: uninstall.opsiscript
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 

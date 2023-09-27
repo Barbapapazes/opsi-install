@@ -1,0 +1,7 @@
+
+[Changelog]
+libreoffice (7.6.1.2-1) stable; urgency=medium
+
+  * initial by opsi-setup-detector - Version: 4.2.1.18
+
+-- 4AS <admin@example.com> mar., 26 sept. 2023 12:33:47 +0200
