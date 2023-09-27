@@ -1,0 +1,21 @@
+[Package]
+version: 1
+depends: 
+
+[Product]
+type: localboot
+id: putty
+name: PuTTY
+description: 
+advice: 
+version: 0.79.0.0
+priority: 0
+licenseRequired: 
+productClasses: 
+setupScript: setup.opsiscript
+uninstallScript: uninstall.opsiscript
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 

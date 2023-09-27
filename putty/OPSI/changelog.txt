@@ -1,0 +1,7 @@
+
+[Changelog]
+putty (0.79.0.0-1) stable; urgency=medium
+
+  * initial by opsi-setup-detector - Version: 4.2.1.18
+
+-- 4AS <admin@example.com> mar., 26 sept. 2023 13:01:52 +0200

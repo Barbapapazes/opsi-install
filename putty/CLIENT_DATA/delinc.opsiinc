@@ -1,0 +1,42 @@
+; ----------------------------------------------------------------
+; This is a opsi-script file.
+; See https://opsi.org    https://uib.de
+; This code was originally created by opsi-setup-detector 4.2.1.18
+; ----------------------------------------------------------------
+encoding=utf8
+
+comment "Start the Uninstall check:"
+
+; Variant 1:
+; Use the MsiId found by the opsi-setup detector:
+;set $UninstallList$ = addtolist($UninstallList$,"0.79.0.0={E07417FF-E888-4648-878C-73E25D64D50D}")
+; you may add later aditional msiids to this list
+; set $msi-list$ = addtolist($msi-list$,"<version>=<GUID>")
+
+; Variant 2:
+;-----------------------------------------------------
+; Finding the MsiId by the Displayname from Registry:
+; Be sure that the Displayname is set correctly:
+Set $DisplayName$ = 'PuTTY release 0.79 (64-bit)'
+; escape all regex relevant chars with '\' : '()'
+set $DisplayNameRegex$ = stringReplace($DisplayName$, "(", "\(")
+set $DisplayNameRegex$ = stringReplace($DisplayNameRegex$, ")", "\)")
+; '(?i)' = case insesitive ; '.*' = 0 or more of any thing
+set $DisplayNameRegex$ = '(?i)'+$DisplayNameRegex$+'.*'
+Set $UninstallList$ = getGuidListByDisplaynameRegex($DisplayNameRegex$)
+;-----------------------------------------------------
+
+if count($UninstallList$) int> "0"
+	
+	Comment "Uninstalling all found versions"
+	for %uninstallEntry% in $UninstallList$ do Sub_Uninstallation_msi
+	
+endif
+
+if not(($InstallDir$ = '') or ($InstallDir$ = 'unknown'))
+	if directoryexists($InstallDir$)
+		SleepSeconds 5
+		Files_uninstall
+	endif
+	
+endif
