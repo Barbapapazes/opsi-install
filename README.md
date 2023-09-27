@@ -10,3 +10,12 @@ Use opsi-setup-detector to create opsiscript and opsi PackageBuilder to build pa
 - `PuTTY`, use https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html (x64), rename it `putty-64bit-0.79-installer` and move it into `putty/CLIENT_DATA/files1`
 - `LibreOffice`, use https://fr.libreoffice.org/download/telecharger-libreoffice/, rename it `LibreOffice_7.6.1_Win_x86-64` and move it into `libreoffice/CLIENT_DATA/files1`
 - `Visual Studio Code`, use https://code.visualstudio.com/Download (System Installer x64), renamte it `VSCodeSetup-x64-1.82.2` and move it into `code/CLIENT_DATA/files1`
+
+### Install Packages
+
+```sh
+# Run all of these commands inside the application folder
+sudo opsi-makepackage --no-md5 --no-zsync
+sudo opsi-set-rights .
+sudo opsi-package-manager -v -i -S *.opsi
+```
