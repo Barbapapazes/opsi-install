@@ -1,0 +1,21 @@
+[Package]
+version: 1
+depends: 
+
+[Product]
+type: localboot
+id: visual-studio-code
+name: Visual Studio Code
+description: 
+advice: 
+version: 1.82.2
+priority: 0
+licenseRequired: 
+productClasses: 
+setupScript: setup.opsiscript
+uninstallScript: uninstall.opsiscript
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 

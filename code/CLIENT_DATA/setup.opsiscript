@@ -1,0 +1,85 @@
+; ----------------------------------------------------------------
+; This is a opsi-script file.
+; See https://opsi.org    https://uib.de
+; This code was originally created by opsi-setup-detector 4.2.1.18
+; ----------------------------------------------------------------
+encoding=utf8
+
+[Actions]
+requiredOpsiscriptVersion >= "4.12.4.23"
+
+importlib "uib_exitcode.opsiscript"
+importlib "osd-lib.opsiscript"
+
+
+; All variables are defined here:
+include_insert "declarations.opsiinc"
+
+; ----------------------------------------------------------------
+; $ProductId$ is the name of the product in opsi, only lower letters, no umlauts, no white spaces, use '-' as a separator
+Set $ProductId$		= "visual-studio-code"
+; the path where we find the product after the installation
+Set $InstallDir$	= "%ProgramFiles64Dir%\Microsoft VS Code"
+set $targetprogram$ = ""
+Set $MinimumSpace$	 = "540 MB"
+; ----------------------------------------------------------------
+
+Message "Installing " + $ProductId$ + " ..."
+
+set $OS$ = GetOS
+
+if not(($OS$ = "Windows_NT"))
+	logError "Installation aborted: wrong OS version: only Windows"
+	isFatalError "wrong OS"
+endif
+
+if not(HasMinimumSpace ("%SystemDrive%", $MinimumSpace$))
+	LogError "Not enough space on %SystemDrive%, " + $MinimumSpace$ + " on drive %SystemDrive% needed for " + $ProductId$
+	isFatalError "No Space"
+	; Stop process and set installation status to failed
+endif
+
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+
+
+
+if FileExists("%ScriptPath%\delinc.opsiinc")
+	comment "Start uninstall part"
+	include_insert "%ScriptPath%\delinc.opsiinc"
+endif
+
+Message "Installing " + $ProductId$ + " ..."
+
+set $installerSourceDir$ = "%scriptpath%\files1"
+
+
+comment "Start setup program"
+ChangeDirectory $installerSourceDir$
+;----------------------------------------------
+Winbatch_install
+;----------------------------------------------
+set $ExitCode$ = getlastexitcode
+if "true" = isInnoExitcodeFatal($exitcode$, "true", $ErrorString$ )
+
+	LogError $ErrorString$
+	isfatalerror $ErrorString$
+else
+	Comment $ErrorString$
+endif
+
+
+
+
+[Winbatch_install]
+"$installerSourceDir$\VSCodeSetup-x64-1.82.2.exe" /sp- /silent /norestart /nocancel /SUPPRESSMSGBOXES /MERGETASKS=!runcode
+
+[Winbatch_uninstall_1]
+"$Installdir$\unins000.exe" /silent /norestart /nocancel /SUPPRESSMSGBOXES
+
+[Files_uninstall]
+del -sf "$InstallDir$\"
+
+
+; ----------------------------------------------------------------
+; ----------------------------------------------------------------
