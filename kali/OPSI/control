@@ -1,0 +1,21 @@
+[Package]
+version: 1
+depends:
+
+[Product]
+type: localboot
+id: kali
+name: Kali
+description:
+advice:
+version: 1
+priority: 0
+licenseRequired:
+productClasses:
+setupScript: setup.opsiscript
+uninstallScript: uninstall.opsiscript
+updateScript:
+alwaysScript:
+onceScript:
+customScript:
+userLoginScript:
