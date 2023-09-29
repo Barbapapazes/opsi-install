@@ -46,7 +46,7 @@ else
 
 	comment "Start setup program"
 	ChangeDirectory "%SCRIPTPATH%"
-	Execwith_ps
+	Execwith_ps "%System%\WindowsPowerShell\v1.0\powershell.exe" winst /64Bit
 	Sub_check_exitcode
 endif
 
