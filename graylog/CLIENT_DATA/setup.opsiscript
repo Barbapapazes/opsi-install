@@ -46,12 +46,15 @@ else
 
 	comment "Start setup program"
 	ChangeDirectory "%SCRIPTPATH%"
+	Winbatch_install
 	Execwith_ps "%System%\WindowsPowerShell\v1.0\powershell.exe" winst /64Bit
 	Sub_check_exitcode
 endif
 
-[Execwith_ps]
+[Winbatch_install]
 "%scriptpath%\graylog_sidecar_installer_1.2.0-1.exe" /S -SERVERURL=http://10.0.3.50:9000/api/ -APITOKEN=1i9n3ncpol3ogspm79aia761r88c7jk4sr3ms16ufqmavi8ouffc
+
+[Execwith_ps]
 &"C:\Program Files\graylog\sidecar\graylog-sidecar.exe" -service install
 &"C:\Program Files\graylog\sidecar\graylog-sidecar.exe" -service start
 
