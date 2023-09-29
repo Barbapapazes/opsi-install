@@ -1,6 +1,0 @@
-
-.\graylog_sidecar_installer_1.2.0-1.exe /S -SERVERURL=http://10.0.3.50:9000/api/ -APITOKEN=1i9n3ncpol3ogspm79aia761r88c7jk4sr3ms16ufqmavi8ouffc
-
-&"C:\Program Files\graylog\sidecar\graylog-sidecar.exe" -service install
-
-&"C:\Program Files\graylog\sidecar\graylog-sidecar.exe" -service start
