@@ -14,6 +14,7 @@ Use opsi-setup-detector to create opsiscript and opsi PackageBuilder to build pa
 - `VMware Player`, use https://www.vmware.com/fr/products/workstation-player/workstation-player-evaluation.html, rename it `VMware-player-full-17.0.2-21581411` and move it into `vmware/CLIENT_DATA/files1`
 - `Hyper-V`, use a PowerShell script to install it and to remove it.
 - `Zabbix`, ask Monitoring for the MSI file, rename it `zabbix` and move it into `zabbix/CLIENT_DATA`
+- `Graylog Sidecar`, use https://github.com/Graylog2/collector-sidecar/releases/tag/1.2.0, rename it `graylog_sidecar_installer_1.2.0-1` and move it into `graylog/CLIENT_DATA`
 - `Kali`, use https://www.kali.org/get-kali/#kali-virtual-machines, rename it `kali-linux` and move it into `kali/CLIENT_DATA/files1`. We will just move the file into each computer, we will not install it.
 
 ### Install Packages
